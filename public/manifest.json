@@ -1,0 +1,22 @@
+{
+  "id": "/",
+  "name": "TAPAS — Thermal Analytics & Public-health Advisory System",
+  "short_name": "TAPAS",
+  "description": "Find your place, understand available heat-risk information and locate nearby help in India.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "en-IN",
+  "background_color": "#0E0B08",
+  "theme_color": "#0E0B08",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Active alerts", "short_name": "Alerts", "url": "/alerts" },
+    { "name": "Work/rest guidance", "short_name": "Occupational", "url": "/occupational" }
+  ]
+}

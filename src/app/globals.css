@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- TAPAS exact furnace & kiln palette ----------------------------- */
+    /* Surfaces — warm charcoal, four deliberate levels */
+    --surface-0: #100C09;   /* page base */
+    --surface-1: #191410;   /* primary panel */
+    --surface-2: #221B15;   /* nested block */
+    --surface-3: #2E251C;   /* elevated: modal, popover, hover */
+
+    /* Lines */
+    --line-hair: #322619;   /* internal dividers — the workhorse */
+    --line-soft: #3F3122;   /* panel borders */
+    --line-firm: #5C452E;   /* focus, active, emphasis */
+
+    /* Type — warm paper, never #FFF */
+    --ink-high: #F2E3CC;    /* headings, primary metrics */
+    --ink-mid: #C4A986;     /* body */
+    --ink-low: #8A7359;     /* labels, units, captions */
+    --ink-faint: #5E4E3D;   /* disabled, placeholder */
+
+    /* THE single accent */
+    --accent: #E2722A;
+    --accent-dim: #A85420;
+    --accent-hover: #EA762B;
+    --accent-foreground: #100C09;
+
+    /* Risk scale — black-body radiation ramp */
+    --risk-1: #4F7B4A;      /* Low       — desaturated sage, deliberately dull */
+    --risk-2: #C9A227;      /* Moderate  — brass, not lemon */
+    --risk-3: #DE7629;      /* High      — ember */
+    --risk-4: #C03B2B;      /* Very High — iron oxide */
+    --risk-5: #7E1F22;      /* Extreme   — deep oxide */
+
+    /* System status — must NEVER use risk colours */
+    --info: #8A7359;        /* provider unavailable, stale, neutral notice */
+    --ok: #4F7B4A;
+
+    /* Semantic UI Aliases mapped to surface & line tokens */
+    --bg-base: var(--surface-0);
+    --bg-primary: var(--surface-1);
+    --bg-secondary: var(--surface-2);
+    --bg-elevated: var(--surface-3);
+    --border-subtle: var(--line-hair);
+    --border-strong: var(--line-soft);
+    --text-primary: var(--ink-high);
+    --text-secondary: var(--ink-mid);
+    --text-muted: var(--ink-low);
+    --accent-deep: #7E1F22;
+
+    /* Legacy compatibility aliases */
+    --heat-orange: #DE7629;
+    --heat-crimson: #7E1F22;
+    --bg: #100C09;
+    --text: #F2E3CC;
+    --subtext: #C4A986;
+    --font: var(--font-inter), 'Inter', system-ui, sans-serif;
+
+    /* ---- shadcn/ui tokens mapped to warm charcoal/parchment --------------- */
+    --background: 24 28% 5%;
+    --foreground: 36 62% 87%;
+    --card: 27 22% 8%;
+    --card-foreground: 36 62% 87%;
+    --popover: 28 24% 14%;
+    --popover-foreground: 36 62% 87%;
+    --primary: 23 76% 52%;
+    --primary-foreground: 24 28% 5%;
+    --secondary: 27 22% 11%;
+    --secondary-foreground: 36 62% 87%;
+    --muted: 27 22% 11%;
+    --muted-foreground: 32 22% 44%;
+    --destructive: 6 62% 46%;
+    --destructive-foreground: 36 62% 87%;
+    --border: 32 34% 15%;
+    --input: 32 34% 15%;
+    --ring: 23 76% 52%;
+    --radius: 0.625rem; /* 10px default radius (two radii only: 10px & 14px) */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    color-scheme: dark;
+  }
+
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font);
+    font-variant-numeric: tabular-nums;
+    @apply antialiased;
+  }
+
+  /* Keyboard focus outline */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2;
+    --tw-ring-color: var(--accent);
+    --tw-ring-offset-color: var(--bg-base);
+  }
+}
+
+@layer components {
+  .tapas-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+  }
+
+  .tapas-subtext {
+    color: var(--text-secondary);
+  }
+
+  /* Hairline-divided grid system */
+  .hairline-grid {
+    display: grid;
+    gap: 1px;
+    background-color: var(--border-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .hairline-cell {
+    background-color: var(--bg-primary);
+    padding: 1rem;
+  }
+
+  .hairline-cell-elevated {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+  }
+
+  /* Typography standards */
+  .metric-large {
+    font-size: clamp(2.125rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+}
+
+/* MapLibre popups override library defaults globally */
+.maplibregl-popup-content {
+  background: var(--surface-3) !important;
+  border: 1px solid var(--line-soft) !important;
+  border-radius: 10px !important;
+  padding: 0 !important;
+  color: var(--ink-mid) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  max-width: 260px;
+  overflow: hidden;
+}
+.maplibregl-popup-tip {
+  border-top-color: var(--surface-3) !important;
+}
+.maplibregl-popup-close-button {
+  color: var(--ink-low) !important;
+  font-size: 18px !important;
+  padding: 6px 9px !important;
+  background: transparent !important;
+  border: none !important;
+}
+.maplibregl-popup-close-button:hover {
+  color: var(--ink-high) !important;
+  background: transparent !important;
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(14, 11, 8, 0.75) !important;
+  color: var(--text-muted) !important;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: var(--subtext) !important;
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  font-size: 11px;
+}
+
+.maplibregl-ctrl-group {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border));
+}
+
+.maplibregl-ctrl-group button {
+  background-color: transparent !important;
+}
+
+.maplibregl-ctrl-icon {
+  filter: invert(1) brightness(1.6);
+}
+
+/* Printing is how the occupational schedule leaves the building — paper
+   stays light and legible regardless of the app's on-screen dark theme. */
+@media print {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 209 29% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 209 29% 15%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 209 29% 15%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 209 12% 39%;
+    --border: 214 9% 85%;
+    --bg: #ffffff;
+    --text: #1c2833;
+    --subtext: #566573;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #1c2833;
+  }
+
+  .print-page {
+    break-inside: avoid;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Map navigation remains usable with one thumb. */
+.maplibregl-ctrl-group button { width: 44px; height: 44px; }
+
+/* Landing hero: soft drifting colour blobs, no WebGL/canvas. */
+.tapas-blob {
+  position: absolute;
+  width: 44vw;
+  height: 44vw;
+  max-width: 620px;
+  max-height: 620px;
+  border-radius: 9999px;
+  filter: blur(70px);
+  will-change: transform;
+}
+.tapas-blob-1 { top: -12%; left: -10%; background: radial-gradient(circle, var(--risk-4), transparent 70%); opacity: 0.22; animation: tapas-drift-1 26s ease-in-out infinite; }
+.tapas-blob-2 { bottom: -18%; right: -8%; background: radial-gradient(circle, var(--risk-3), transparent 70%); opacity: 0.2; animation: tapas-drift-2 30s ease-in-out infinite; }
+.tapas-blob-3 { top: 28%; right: 18%; background: radial-gradient(circle, var(--risk-2), transparent 70%); opacity: 0.15; animation: tapas-drift-3 22s ease-in-out infinite; }
+@keyframes tapas-drift-1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6vw, 8vh); } }
+@keyframes tapas-drift-2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7vw, -6vh); } }
+@keyframes tapas-drift-3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-5vw, 6vh); } }
+
+@keyframes tapas-fade-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+.tapas-ticker-fade { animation: tapas-fade-in 500ms ease; }
+
+/* MapLibre Dark Theme Popups */
+.maplibregl-popup-content {
+  background: #191410 !important;
+  color: #F2E3CC !important;
+  border: 1px solid #3F3122 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75) !important;
+  padding: 10px 14px !important;
+}
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+  border-bottom-color: #191410 !important;
+}
+.maplibregl-popup-anchor-bottom .maplibregl-popup-tip {
+  border-top-color: #191410 !important;
+}
+.maplibregl-popup-anchor-left .maplibregl-popup-tip {
+  border-right-color: #191410 !important;
+}
+.maplibregl-popup-anchor-right .maplibregl-popup-tip {
+  border-left-color: #191410 !important;
+}
+.maplibregl-popup-close-button {
+  color: #C4A986 !important;
+  font-size: 16px !important;
+  padding: 4px 8px !important;
+}
+.maplibregl-popup-close-button:hover {
+  color: #FFFFFF !important;
+  background: transparent !important;
+}

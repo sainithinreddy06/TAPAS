@@ -1,0 +1,125 @@
+{
+  "city": "Hyderabad",
+  "generated_at": "2026-09-09T19:56:13.977509+00:00",
+  "crs_baseline_death_rate": 0.0071,
+  "climatology_source": "Open-Meteo Historical Archive (ERA5/ERA5-Land Reanalysis)",
+  "wards": {
+    "HYD-001": {
+      "name": "Kukatpally",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.5,
+        "p95_utci": 42.4,
+        "p97_utci": 44.3,
+        "hours_sampled": 647,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "HYD-002": {
+      "name": "KPHB Colony",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.3,
+        "p95_utci": 42.4,
+        "p97_utci": 44.0,
+        "hours_sampled": 648,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "HYD-003": {
+      "name": "Moosapet",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.5,
+        "p95_utci": 42.4,
+        "p97_utci": 44.3,
+        "hours_sampled": 647,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "HYD-004": {
+      "name": "Charminar",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 28.2,
+        "p95_utci": 43.1,
+        "p97_utci": 44.7,
+        "hours_sampled": 629,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "HYD-005": {
+      "name": "Amberpet",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 28.3,
+        "p95_utci": 43.3,
+        "p97_utci": 45.2,
+        "hours_sampled": 635,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "GHMC-SEC": {
+      "name": "Secunderabad",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.4,
+        "p95_utci": 42.6,
+        "p97_utci": 44.3,
+        "hours_sampled": 641,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "GHMC-KHA": {
+      "name": "Khairatabad",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.8,
+        "p95_utci": 42.6,
+        "p97_utci": 44.5,
+        "hours_sampled": 644,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "GHMC-LBN": {
+      "name": "L.B. Nagar",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 28.5,
+        "p95_utci": 43.4,
+        "p97_utci": 45.5,
+        "hours_sampled": 625,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    },
+    "GHMC-SER": {
+      "name": "Serilingampally",
+      "population": 438147,
+      "vulnerability_multiplier": 0.626,
+      "baseline_daily_mortality_m0": 8.5229,
+      "climatology": {
+        "p50_utci": 27.3,
+        "p95_utci": 42.4,
+        "p97_utci": 44.0,
+        "hours_sampled": 648,
+        "reference_source": "Open-Meteo Historical Reanalysis (2024 May)"
+      }
+    }
+  }
+}
