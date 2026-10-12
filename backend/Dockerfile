@@ -11,4 +11,4 @@ COPY alembic.ini pytest.ini ./
 RUN useradd --create-home --uid 10001 tapas && chown -R tapas:tapas /srv/tapas
 USER tapas
 EXPOSE 8000 
-CMD ["sh", "-c", "python -m alembic upgrade head && python -m app.seed.run_seed && exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
+CMD ["sh", "-c", "python -m alembic upgrade head && exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-10000}"]
