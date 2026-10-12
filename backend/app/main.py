@@ -1,4 +1,3 @@
-```python
 from contextlib import asynccontextmanager
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -147,4 +146,3 @@ for router in (
     broadcast.router,
 ):
     app.include_router(router)
-```
